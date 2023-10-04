@@ -25,7 +25,6 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
-  //  LEFT OFF HERE 10/2
   // Making the api call for the user login endpoint
   public userLogin(userDetails: any): Observable<any> {
     return this.http
