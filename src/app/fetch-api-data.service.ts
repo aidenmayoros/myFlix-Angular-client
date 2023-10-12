@@ -10,8 +10,8 @@ import { map } from 'rxjs/operators';
 import { HttpParams } from '@angular/common/http';
 
 interface UserDetail {
-  username: string;
-  password: string;
+  Username: string;
+  Password: string;
 }
 
 type UserRegistrationResponse = UserDetail;
@@ -65,9 +65,6 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) {}
 
   public userLogin(userDetails: UserDetail): Observable<LoginResponse> {
-    // Ideally, you should use HttpParams instead of URLSearchParams.
-    // and sending userDetails as the payload, not appended to the URL.
-
     return this.http
       .post<LoginResponse>(apiUrl + 'login', userDetails)
       .pipe(catchError(this.handleError)) as Observable<LoginResponse>;
