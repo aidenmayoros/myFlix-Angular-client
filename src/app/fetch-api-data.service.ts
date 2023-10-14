@@ -25,8 +25,8 @@ interface UpdatedUser {
 }
 
 interface LoginResponse {
+  user: string;
   token: string;
-  userId: string;
 }
 
 interface Movie {
