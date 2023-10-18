@@ -1,3 +1,15 @@
+.movie-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-card {
+  margin: 2em;
+}
+
 .movie-card-img {
   height: 450px;
 }
