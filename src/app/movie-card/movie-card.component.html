@@ -1,8 +1,8 @@
 <app-basic-toolbar></app-basic-toolbar>
 <div style="display: flex" class="movie-card-container">
   <mat-card *ngFor="let movie of movies" class="movie-card">
-    <mat-card-header>
-      <mat-card-title>{{ movie.Title }}</mat-card-title>
+    <mat-card-header class="card-header">
+      <mat-card-title class="card-title">{{ movie.Title }}</mat-card-title>
       <mat-card-subtitle
         >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
       >

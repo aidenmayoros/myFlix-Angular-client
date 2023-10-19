@@ -1,17 +1,19 @@
-<mat-toolbar>
-  <span>MyFlix</span>
-  <span class="example-spacer"></span>
+<mat-toolbar class="basic-toolbar">
+  <a href="/movies" class="nav-title">MyFlix App</a>
+  <span class="spacer"></span>
   <button
     mat-icon-button
-    class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
+    class="profile-icon"
+    aria-label="Profile Icon"
+    (click)="navigateToProfilePage()"
   >
     <mat-icon>account_circle</mat-icon>
   </button>
   <button
     mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with share icon"
+    class="logout-icon"
+    aria-label="Logout Icon"
+    (click)="logoutUser()"
   >
     <mat-icon>logout</mat-icon>
   </button>

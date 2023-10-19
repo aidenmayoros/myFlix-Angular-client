@@ -1,10 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { MatDialogRef } from '@angular/material/dialog';
-
 import { FetchApiDataService } from '../fetch-api-data.service';
-
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
