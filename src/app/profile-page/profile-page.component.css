@@ -24,11 +24,7 @@ form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas:
-    "line1"
-    "line2"
-    "line3 "
-    "line4 ";
+  grid-template-areas: "line1" "line2" "line3 " "line4 ";
 }
 
 @media screen and (max-width: 550px) {
@@ -38,15 +34,10 @@ form {
     justify-content: space-around;
     padding-left: 10px;
   }
-
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: min-content;
-    grid-template-areas:
-      "line1"
-      "line2"
-      "line3 "
-      "line4 ";
+    grid-template-areas: "line1" "line2" "line3 " "line4 ";
   }
-}
+}/*# sourceMappingURL=profile-page.component.css.map */

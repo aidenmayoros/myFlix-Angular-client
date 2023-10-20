@@ -20,7 +20,7 @@ interface UpdatedUser {
   Username: string;
   Password: string;
   Email: string;
-  Birthday: Date;
+  Birthday: string;
   FavoriteMovies: Array<string>;
 }
 
@@ -142,11 +142,16 @@ export class FetchApiDataService {
   }
 
   // Making the endpoint for getting a user if there is one logged into localstorage
-  getOneUser() {
-    const user = JSON.parse(
-      localStorage.getItem('user') || '{}',
-    ) as LoggedInUser;
-    return user;
+  getOneUser(): Observable<any> {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const token = localStorage.getItem('token');
+    return this.http
+      .get(apiUrl + 'users/' + user.Username, {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        }),
+      })
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Making the api call for the get favourite movies for a user endpoint

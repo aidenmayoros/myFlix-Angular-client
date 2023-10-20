@@ -17,6 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 // Compoenents
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
@@ -27,6 +28,7 @@ import { BasicToolbarComponent } from './movie-card/basic-toolbar.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { MovieDetailsDialogComponent } from './movie-details-dialog/movie-details-dialog.component';
 
+// App Routing
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
@@ -59,6 +61,7 @@ const appRoutes: Routes = [
     FormsModule,
     MatIconModule,
     MatToolbarModule,
+    MatListModule,
     BasicToolbarComponent,
   ],
   providers: [],
