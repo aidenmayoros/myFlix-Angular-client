@@ -189,6 +189,17 @@ export class FetchApiDataService {
       ) as Observable<UpdatedUser>;
   }
 
+  /**
+   * @param movieID
+   * @returns a boolean value that will check if the favorite movies array has any movieID
+   * used in the movie-card component
+   */
+
+  isFavoriteMovie(movieID: string): boolean {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    return user.FavoriteMovies.indexOf(movieID) >= 0;
+  }
+
   // Making the api call for the edit user endpoint
   editUser(updatedUser: UpdatedUser): Observable<UpdatedUser> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');

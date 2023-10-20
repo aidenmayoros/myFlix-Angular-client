@@ -13,10 +13,46 @@
       class="movie-card-img"
     />
     <mat-card-actions>
-      <button mat-button color="primary">Genre</button>
-      <button mat-button color="primary">Director</button>
-      <button mat-button color="primary">Synopsis</button>
-      <mat-icon>favorite_border</mat-icon>
+      <button
+        mat-button
+        (click)="getGenre(movie.Genre.Name, movie.Genre.Description)"
+        matTooltip="Genre"
+      >
+        <mat-icon>theater_comedy</mat-icon>
+      </button>
+
+      <button
+        mat-button
+        (click)="getDirector(movie.Director.Name, movie.Director.Bio)"
+        matTooltip="Director"
+      >
+        <mat-icon>person</mat-icon>
+      </button>
+
+      <button
+        mat-button
+        (click)="getSynopsis(movie.Description)"
+        matTooltip="synopsis"
+      >
+        <mat-icon>description</mat-icon>
+      </button>
+      <button
+        *ngIf="!isFavorite(movie._id)"
+        mat-icon-button
+        (click)="addFavorite(movie._id)"
+        matTooltip="Add to favorites"
+      >
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+
+      <button
+        *ngIf="isFavorite(movie._id)"
+        mat-icon-button
+        (click)="removeFavorite(movie._id)"
+        matTooltip="Remove from favorites"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
