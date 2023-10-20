@@ -19,7 +19,6 @@ export class ProfilePageComponent implements OnInit {
     Password: '',
     Email: '',
     Birthday: '',
-    FavoriteMovies: [],
   };
 
   constructor(
@@ -40,6 +39,8 @@ export class ProfilePageComponent implements OnInit {
   getUser(): void {
     this.fetchApiData.getOneUser().subscribe((response: any) => {
       this.user = response;
+      console.log(this.user);
+
       this.userData.Username = this.user.Username;
       this.userData.Email = this.user.Email;
       this.user.Birthday = formatDate(
@@ -49,10 +50,8 @@ export class ProfilePageComponent implements OnInit {
         'UTC+0',
       );
 
-      this.fetchApiData.getAllMovies().subscribe((response: any) => {
-        this.favoriteMovies = response.filter(
-          (m: { _id: any }) => this.user.FavoriteMovies.indexOf(m._id) >= 0,
-        );
+      this.user.FavoriteMovies.forEach((movie: any) => {
+        this.favoriteMovies.push(movie);
       });
     });
   }

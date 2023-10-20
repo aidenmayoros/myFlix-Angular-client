@@ -21,7 +21,6 @@ interface UpdatedUser {
   Password: string;
   Email: string;
   Birthday: string;
-  FavoriteMovies: Array<string>;
 }
 
 interface LoginResponse {

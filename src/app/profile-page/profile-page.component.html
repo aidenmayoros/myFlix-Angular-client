@@ -61,19 +61,11 @@
       />
     </mat-form-field>
 
-    <br />
-
-    <button
-      class="item-f"
-      mat-raised-button
-      color="primary"
-      (click)="editUser()"
-    >
-      update
-    </button>
-
-    <button class="item-g" mat-button color="warn" (click)="deleteUser()">
+    <button mat-button color="warn" (click)="deleteUser()">
       delete account
+    </button>
+    <button mat-raised-button color="primary" (click)="editUser()">
+      update
     </button>
   </form>
 </div>
