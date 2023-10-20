@@ -20,8 +20,7 @@ interface UpdatedUser {
   Username: string;
   Password: string;
   Email: string;
-  Birthday: Date;
-  FavoriteMovies: Array<string>;
+  Birthday: string;
 }
 
 interface LoginResponse {
@@ -142,11 +141,16 @@ export class FetchApiDataService {
   }
 
   // Making the endpoint for getting a user if there is one logged into localstorage
-  getOneUser() {
-    const user = JSON.parse(
-      localStorage.getItem('user') || '{}',
-    ) as LoggedInUser;
-    return user;
+  getOneUser(): Observable<any> {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const token = localStorage.getItem('token');
+    return this.http
+      .get(apiUrl + 'users/' + user.Username, {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        }),
+      })
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Making the api call for the get favourite movies for a user endpoint
@@ -187,6 +191,17 @@ export class FetchApiDataService {
         map(this.extractResponseData),
         catchError(this.handleError),
       ) as Observable<UpdatedUser>;
+  }
+
+  /**
+   * @param movieID
+   * @returns a boolean value that will check if the favorite movies array has any movieID
+   * used in the movie-card component
+   */
+
+  isFavoriteMovie(movieID: string): boolean {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    return user.FavoriteMovies.indexOf(movieID) >= 0;
   }
 
   // Making the api call for the edit user endpoint

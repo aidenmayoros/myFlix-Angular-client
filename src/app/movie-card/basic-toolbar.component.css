@@ -1,0 +1,16 @@
+.basic-toolbar {
+  background-color: #1252ac;
+  color: #fff;
+}
+
+.nav-title {
+  font-size: 24px;
+  text-decoration: none;
+}
+.nav-title:visited {
+  color: #fff;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}/*# sourceMappingURL=basic-toolbar.component.css.map */

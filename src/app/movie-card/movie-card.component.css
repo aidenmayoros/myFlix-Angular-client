@@ -1,0 +1,24 @@
+.movie-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+  justify-content: center;
+  align-items: center;
+  background-color: #303030;
+}
+
+.movie-card {
+  margin: 2em;
+}
+
+.card-header {
+  margin-bottom: 1em;
+}
+
+.card-title {
+  color: rgb(17, 83, 172);
+}
+
+.movie-card-img {
+  height: 450px;
+}/*# sourceMappingURL=movie-card.component.css.map */
