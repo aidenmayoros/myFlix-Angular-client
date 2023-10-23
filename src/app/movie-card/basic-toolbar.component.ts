@@ -34,4 +34,8 @@ export class BasicToolbarComponent {
   navigateToProfilePage(): void {
     this.router.navigate(['profile']);
   }
+
+  navigateToMoviesPage(): void {
+    this.router.navigate(['movies']);
+  }
 }
