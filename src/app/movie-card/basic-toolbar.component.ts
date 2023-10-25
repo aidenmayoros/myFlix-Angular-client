@@ -22,6 +22,10 @@ export class BasicToolbarComponent {
     public snackBar: MatSnackBar,
   ) {}
 
+  /**
+   * user and token will be removed from localstorage and user will be taken back to welcome screen
+   */
+
   logoutUser(): void {
     localStorage.setItem('user', '');
     localStorage.setItem('token', '');

@@ -79,7 +79,7 @@ export class ProfilePageComponent implements OnInit {
   }
 
   /**
-   *  delete user will delete their account permanently and be sent back to the welcome screen
+   *  delete user will delete their account permanently and send them back to the welcome screen
    */
 
   deleteUser(): void {
