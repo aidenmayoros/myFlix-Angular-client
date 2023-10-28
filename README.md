@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
 
+## Screenshots
+<img src="./README_images/myFlix-angular-4.png" width="80%" style="display: block; margin: 0 auto; padding: 10px">
+<img src="./README_images/myFlix-angular-3.png" width="80%" style="display: block; margin: 0 auto; padding: 10px">
+<img src="./README_images/myFlix-angular-2.png" width="80%" style="display: block; margin: 0 auto; padding: 10px">
+<img src="./README_images/myFlix-angular-1.png" width="80%" style="display: block; margin: 0 auto; padding: 10px">
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
